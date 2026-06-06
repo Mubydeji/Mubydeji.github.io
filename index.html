@@ -1,3 +1,4 @@
+cat << 'HTMLEOF' > /mnt/user-data/outputs/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,10 +88,13 @@
     .exp-period { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem; }
     .exp-org { font-family: 'Playfair Display', serif; font-size: 0.98rem; color: var(--navy); margin-bottom: 0.2rem; line-height: 1.3; }
     .exp-loc { font-size: 0.76rem; color: var(--muted); }
-    .exp-role { font-size: 0.92rem; font-weight: 600; color: var(--ink); margin-bottom: 1rem; }
+    .exp-role { font-size: 0.92rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .exp-sub-role { font-size: 0.82rem; font-weight: 500; color: var(--accent); margin-bottom: 0.9rem; font-style: italic; }
     .exp-list { list-style: none; }
     .exp-list li { font-size: 0.875rem; color: var(--muted); padding-left: 1.1rem; position: relative; margin-bottom: 0.55rem; line-height: 1.7; }
     .exp-list li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 4px; height: 4px; background: var(--accent); border-radius: 50%; }
+    .exp-role-block { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px dashed var(--rule); }
+    .exp-role-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     #skills { background: var(--warm); }
     .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
     .sk { background: var(--white); border: 1px solid var(--rule); border-radius: 5px; padding: 1.35rem; }
@@ -163,6 +167,7 @@
       <span class="hero-tag">RAG Pipelines</span>
       <span class="hero-tag">Streamlit</span>
       <span class="hero-tag">ODK</span>
+      <span class="hero-tag">DHIS2</span>
     </div>
   </div>
   <div class="hero-right">
@@ -189,12 +194,12 @@
           learning, and AI application deployment.
         </p>
         <p>
-          At <strong>Click-On Kaduna</strong>, I built a Bronze-Silver-Gold SQL data warehouse
-          for longitudinal health data across 80 plus PHC facilities in Kaduna State, redesigned
-          the facility readiness Power BI dashboard now used in active government planning, and
-          led field data collection across 14 local government areas using ODK. At
-          <strong>Bilsun Textile</strong>, I built automated reporting systems that replaced
-          manual spreadsheet workflows and applied demand modelling to reduce overstock.
+          At <strong>Natview Foundation for Technology Innovation</strong>, I serve as Junior Data Analyst
+          and Field Data Enumerator under Longitudinal Study 2.0, monitoring vaccine availability,
+          cold chain records, essential medicine stock, and supply chain data across 80 plus PHC
+          facilities in 14 local government areas in Kaduna State. I also work as an ICT Instructor
+          and School Supervisor on the World Bank-partnered PDS-FAST project, delivering Train-the-Trainer
+          ICT programmes across schools in Kaduna and Ekiti States.
         </p>
         <p>
           I have built and deployed four AI and ML applications covering clinical risk prediction,
@@ -344,22 +349,76 @@
     <h2 class="heading">Experience</h2>
     <hr class="divider">
     <div>
+
+      <!-- NATVIEW FOUNDATION -->
       <div class="exp-item reveal">
         <div>
-          <div class="exp-period">Oct 2025 · Present</div>
+          <div class="exp-period">Feb 2026 · Present</div>
+          <div class="exp-org">Natview Foundation for Technology Innovation</div>
+          <div class="exp-loc">Kaduna, Nigeria</div>
+        </div>
+        <div>
+          <div class="exp-role-block">
+            <div class="exp-role">Junior Data Analyst</div>
+            <div class="exp-sub-role">Jun 2026 – Present</div>
+            <ul class="exp-list">
+              <li>Supporting data management objectives across assigned projects by designing and maintaining data workflows, digitising data collection tools, and automating reporting processes from both primary and secondary sources.</li>
+              <li>Collaborating with project teams to identify data sources, define collection processes, and optimise data preparation exercises to ensure datasets are accurate, complete, and analysis-ready.</li>
+              <li>Applying statistical and analytical tools in Python and R to interpret datasets, identify trends and patterns, and answer diagnostic and predictive analytics questions for programme decision-making.</li>
+              <li>Developing SOPs for data governance and creating documentation to support knowledge management and knowledge transfer to key stakeholders across programmes.</li>
+            </ul>
+          </div>
+          <div class="exp-role-block">
+            <div class="exp-role">Field Data Enumerator &nbsp;&middot;&nbsp; Longitudinal Study 2.0</div>
+            <div class="exp-sub-role">Feb 2026 – Present</div>
+            <ul class="exp-list">
+              <li>Delivered a zero-error longitudinal health dataset across 80 plus PHC facilities in 14 LGAs in Kaduna State by deploying a structured data collection instrument with built-in validation logic and cross-field checks.</li>
+              <li>Personally visited and assessed 30 plus health facilities across Kaduna State LGAs, verifying vaccine availability, cold chain records, essential medicine stock levels, utilisation history, supply chain documentation, staff attendance, and cadre records against source documents on every visit.</li>
+              <li>Maintained field data quality across a 14-LGA operation by supervising data collectors, resolving discrepancies in real time, and ensuring all facility records were complete and compliant before submission.</li>
+              <li>Supported routine health data reporting and cross-verification of facility-level records using DHIS2, contributing to a dataset used in state-level immunisation planning.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- NATVIEW TECHNOLOGY -->
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-period">Mar 2026 · Present</div>
+          <div class="exp-org">Natview Foundation for Technology Innovation (Technology Arm)</div>
+          <div class="exp-loc">Kaduna, Nigeria</div>
+        </div>
+        <div>
+          <div class="exp-role">ICT Instructor and School Supervisor &nbsp;&middot;&nbsp; PDS-FAST Project</div>
+          <div class="exp-sub-role">World Bank Partnership</div>
+          <ul class="exp-list">
+            <li>Designed and delivered a 5-day Train-the-Trainer ICT programme for 15 plus teachers across 12 schools in Kaduna and Ekiti States, covering LMS deployment, ICT-integrated lesson planning, online assessment design, and digital classroom management.</li>
+            <li>Assessed teacher readiness through structured microteaching sessions, evaluating lesson plan quality, LMS proficiency, tool justification, learner engagement, and formative assessment practice against the PDS-FAST digital competency framework.</li>
+            <li>Adapted training delivery in real time to suit low-connectivity school environments, including offline microteaching workarounds, ensuring all participants achieved minimum competency standards regardless of infrastructure constraints.</li>
+            <li>Contributed to a World Bank-partnered initiative aligned with UNESCO competency standards and the National Digital Literacy Framework to close digital skills gaps in Nigerian secondary schools.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CLICK-ON KADUNA -->
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-period">Oct 2025 · Apr 2026</div>
           <div class="exp-org">Click-On Kaduna</div>
           <div class="exp-loc">Kaduna, Nigeria</div>
         </div>
         <div>
           <div class="exp-role">Data Science Fellow</div>
           <ul class="exp-list">
-            <li>Built a Bronze-Silver-Gold SQL data warehouse for longitudinal health data across 14 local government areas, reducing analyst query time by roughly 40 percent and establishing repeatable ETL workflows for ongoing public health research.</li>
-            <li>Rebuilt the PHC facility readiness Power BI dashboard from the data model up, adding DAX trend measures across 500 plus facility records. Now used by a government team for active state-level resource allocation.</li>
+            <li>Cut analyst query time by roughly 40 percent across a longitudinal health dataset spanning 14 LGAs by designing and building a Bronze-Silver-Gold SQL data warehouse with repeatable ETL workflows and structured validation at each layer.</li>
+            <li>Contributed directly to the state-wide HEFA dashboard used by the entire Kaduna State health system by rebuilding the PHC facility readiness Power BI dashboard, redesigning the data model and adding DAX trend measures across 500 plus facility records.</li>
             <li>Designed a 60-variable ODK survey instrument for a maternal health study with range checks and cross-field validation rules that delivered a zero-error dataset across all 14 LGAs.</li>
-            <li>Ran EDA and statistical analysis in Python and R on longitudinal facility data, surfacing readiness gaps that fed into Kaduna State PHC planning recommendations.</li>
+            <li>Surfaced PHC readiness gaps and coverage patterns that fed into Kaduna State planning recommendations by running EDA and statistical analysis in Python and R on longitudinal facility data.</li>
           </ul>
         </div>
       </div>
+
+      <!-- BILSUN TEXTILE -->
       <div class="exp-item reveal">
         <div>
           <div class="exp-period">Sep 2023 · Mar 2026</div>
@@ -369,11 +428,13 @@
         <div>
           <div class="exp-role">Lead Data Analyst</div>
           <ul class="exp-list">
-            <li>Built a Power BI and Excel reporting suite tracking KPIs across five product lines. Reduced reporting time by roughly 30 percent and contributed to a 15 percent reduction in overstock through demand modelling.</li>
-            <li>Managed over 1,000 monthly transaction records and built automated stock reorder logic that reduced stockout incidents across the product range.</li>
+            <li>Reduced overstock by 15 percent (confirmed by management) and cut reporting time by roughly 30 percent by building a Power BI and Excel reporting suite that replaced manual spreadsheet workflows across five product lines.</li>
+            <li>Enabled automated stock reorder decisions by modelling demand patterns across 1,000 plus monthly transactions using trend decomposition across 18 months of sales data.</li>
           </ul>
         </div>
       </div>
+
+      <!-- LAGOS STATE MINISTRY -->
       <div class="exp-item reveal">
         <div>
           <div class="exp-period">Apr 2024 · Oct 2024</div>
@@ -381,27 +442,14 @@
           <div class="exp-loc">Lagos, Nigeria</div>
         </div>
         <div>
-          <div class="exp-role">Data &amp; Policy Analyst (Industrial Trainee)</div>
+          <div class="exp-role">Data &amp; Policy Analyst (SIWES Trainee)</div>
           <ul class="exp-list">
-            <li>Synthesised over 20 policy documents on digital governance into analytical briefs enabling faster evidence-based decisions by ministry officials.</li>
-            <li>Mapped and documented public-sector data workflows, producing a reference framework that improved reporting clarity across departments.</li>
+            <li>Accelerated evidence-based decision-making by ministry officials by synthesising 20 plus digital governance policy documents into concise, decision-ready analytical briefs.</li>
+            <li>Improved reporting clarity and reduced duplication across technology policy teams by mapping and documenting public-sector data workflows into a structured reference framework.</li>
           </ul>
         </div>
       </div>
-      <div class="exp-item reveal">
-        <div>
-          <div class="exp-period">Oct 2021 · Nov 2024</div>
-          <div class="exp-org">SkillHive</div>
-          <div class="exp-loc">Nigeria</div>
-        </div>
-        <div>
-          <div class="exp-role">Program Manager</div>
-          <ul class="exp-list">
-            <li>Designed Excel dashboards tracking facilitator utilisation and learner progress across 50 plus learners per cohort over a 3-year program run.</li>
-            <li>Produced cohort evaluation reports that identified delivery gaps and informed scheduling improvements across three program tracks.</li>
-          </ul>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -429,12 +477,20 @@
         <div class="sk-content">ETL pipeline design · SQL warehouse architecture (Bronze / Silver / Gold) · Data cleaning and validation at scale · ODK survey instrument design</div>
       </div>
       <div class="sk reveal">
+        <div class="sk-label">Field &amp; M&amp;E</div>
+        <div class="sk-content">ODK Collect · DHIS2 · Facility register verification · Immunisation data monitoring · Cold chain records · Vaccine stock verification · Supply chain data · Field supervision · Data quality assurance</div>
+      </div>
+      <div class="sk reveal">
+        <div class="sk-label">Training &amp; Facilitation</div>
+        <div class="sk-content">LMS deployment · ICT-integrated lesson planning · Train-the-Trainer delivery · Digital competency assessment · SOP development · Knowledge management documentation</div>
+      </div>
+      <div class="sk reveal">
         <div class="sk-label">Statistical Methods</div>
         <div class="sk-content">A/B testing and experimental design · Hypothesis testing · Power analysis · Effect size · Confidence intervals · EDA · Feature engineering · Time series analysis</div>
       </div>
       <div class="sk reveal">
         <div class="sk-label">Tools &amp; Platforms</div>
-        <div class="sk-content">Git · GitHub · Jupyter · Kaggle · ODK Collect · Google Colab · Microsoft Office Suite · Notion</div>
+        <div class="sk-content">Git · GitHub · Jupyter · Kaggle · ODK Collect · Google Colab · Microsoft Office Suite · Canva · Notion</div>
       </div>
     </div>
   </div>
@@ -473,3 +529,5 @@
 </script>
 </body>
 </html>
+HTMLEOF
+echo "Done"
