@@ -91,6 +91,15 @@
     .versus.fixed .v-sign { background: var(--teal); }
 
     /* Five stops */
+    .strands { background: var(--white); padding: 3.2rem 0 3.4rem; }
+    .strands h2 { font-family: var(--display); font-weight: 800; font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 1.6rem; }
+    .strand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .strand { border-top: 3px solid var(--gold); padding-top: 0.9rem; }
+    .strand h3 { font-family: var(--display); font-weight: 700; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.2rem; }
+    .strand .sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 0.7rem; }
+    .strand ul { list-style: none; padding: 0; }
+    .strand li { font-size: 0.97rem; line-height: 1.5; padding: 0.45rem 0; border-top: 1px solid rgba(11,31,58,0.12); }
+    @media (max-width: 860px) { .strand-grid { grid-template-columns: 1fr; gap: 1.8rem; } }
     .breaks { background: var(--white); }
     .stops { border-top: 3px solid var(--navy); }
     .stop { display: grid; grid-template-columns: 13rem minmax(0, 1fr) minmax(0, 1.25fr); gap: 0.6rem 2.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--rule); align-items: start; }
@@ -301,7 +310,19 @@
     @media (max-width: 560px) {
       body { font-size: 16px; }
       .topbar-in { gap: 0.9rem; }
-      .topnav { gap: 1rem; }
+      .topnav { display: none; }
+      .topbar-in { justify-content: space-between; }
+      .hero { padding-top: 2.2rem; }
+      .hero-top { gap: 1.8rem; }
+      .portrait { max-width: 220px; }
+      .portrait img { aspect-ratio: 1 / 1; height: auto; }
+      .portrait::before { inset: 10px -10px -10px 10px; }
+      .actions { gap: 0.6rem; }
+      .actions .btn { flex: 1 1 calc(50% - 0.6rem); text-align: center; padding-left: 0.6rem; padding-right: 0.6rem; }
+      .actions .btn-gold { flex-basis: 100%; }
+      .hero-facts { flex-direction: column; gap: 0.6rem; }
+      .band { padding: 2.6rem 0; }
+      .strands { padding: 2.4rem 0; }
       .fig { padding: 1.3rem 1.1rem; }
       .sheet { padding: 1.2rem 0.9rem; transform: none; }
       .sheet-grid { grid-template-columns: 4.6rem repeat(4, minmax(0, 1fr)); gap: 0.4rem 0.3rem; }
@@ -327,9 +348,9 @@
   <div class="wrap topbar-in">
     <a class="brand" href="#top">Mubarak Adedeji</a>
     <nav class="topnav" aria-label="Sections">
-      <a href="#breaks">What I do</a>
       <a href="#projects">Projects</a>
       <a href="#case-studies">Case studies</a>
+      <a href="#breaks">Data quality checks</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
@@ -344,11 +365,12 @@
   <div class="wrap hero-top">
     <div>
       <h1><span>Mubarak</span><span class="last">Adedeji</span></h1>
-      <p class="hero-lead">Data analyst. Health data, data pipelines and machine learning.</p>
+      <p class="hero-lead">Data Analyst: health data, analytics and machine learning</p>
       <p class="hero-text">
-        I work at Natview Foundation for Technology Innovation in Kaduna. I collect and check health
-        data for Kaduna State, build the Python and SQL pipelines that carry it, and train and deploy
-        machine learning models. Over 3 years across public health, government and retail data.
+        Data Analyst at Natview Foundation for Technology Innovation, Kaduna. I analyse health and supply
+        chain data and report to Kaduna State Government and relevant stakeholders. I also build the data
+        pipelines behind the reports and train machine learning models. Over 3 years in public health,
+        government and retail data.
       </p>
       <dl class="hero-facts">
         <div><dt>Based in</dt><dd>Kaduna, Nigeria (UTC+1)</dd></div>
@@ -368,76 +390,45 @@
   <div class="weave" aria-hidden="true"></div>
 </section>
 
-<section class="band breaks" id="breaks">
+<section class="strands" id="range">
   <div class="wrap">
-    <h2>What I do</h2>
-    <div class="lede">
-      <p>
-        A nurse writes 48 in a clinic register. By the time that figure reaches the state database it
-        can read 84. My work is to find and stop errors like that one, at each of the five places they happen.
-      </p>
-      <div class="versus" id="versus">
-    <div class="v-paper">
-      <p class="v-cap">What the nurse wrote in the register</p>
-      <div class="reg" aria-hidden="true">
-        <p class="reg-title">Penta 3 given, October</p>
-        <p><span>Week 1</span><span>11</span></p>
-        <p><span>Week 2</span><span>14</span></p>
-        <p><span>Week 3</span><span>9</span></p>
-        <p><span>Week 4</span><span>14</span></p>
-      </div>
-      <p class="v-num v-ink"><span class="ring">48</span></p>
+    <h2>Areas of work</h2>
+    <div class="strand-grid">
+      <article class="strand">
+        <h3>Analysis and reports</h3>
+        <ul>
+          <li>Monthly execution and supply chain performance reports for Kaduna State Government and relevant stakeholders.</li>
+          <li>Repeat-data check on stock records: 44 of 242 facilities flagged.</li>
+          <li>Power BI and Excel reporting suite at Bilsun Textile: overstock down 15%.</li>
+          <li>Sales forecasting: linear regression beat two other methods (MAPE 8.45%).</li>
+        </ul>
+      </article>
+      <article class="strand">
+        <h3>Collecting and checking data</h3>
+        <ul>
+          <li>Zero-error dataset across 130+ facilities in 5 LGAs (Longitudinal Study 2.0).</li>
+          <li>ODK Central data loaded to a cloud database every morning.</li>
+          <li>Facility register photos checked against reported figures.</li>
+          <li>Register photo transfer cut from 45 minutes to a few minutes (about 1,500 files).</li>
+        </ul>
+      </article>
+      <article class="strand">
+        <h3>Machine learning</h3>
+        <ul>
+          <li>Chest X-ray classifier: ROC-AUC 0.996, split by patient, deployed.</li>
+          <li>Diabetes risk model: missed cases cut from 27 to 6 of 54.</li>
+          <li>News classification: four methods compared, TF-IDF best at 98.8%.</li>
+          <li>Document question answering with cited sources.</li>
+        </ul>
+      </article>
     </div>
-    <button type="button" class="v-sign" id="v-sign" aria-label="Check the figure again">&ne;</button>
-    <div class="v-screen">
-      <p class="v-cap" id="v-cap">What the state database says</p>
-      <div class="dbrow" aria-hidden="true">
-        <p><span>Facility</span><span>Example PHC</span></p>
-        <p><span>Indicator</span><span>Penta 3 doses given</span></p>
-        <p><span>Period</span><span>October</span></p>
-        <p><span>Source</span><span>DHIS2</span></p>
-      </div>
-      <p class="v-num v-typed" id="v-typed" aria-live="polite">84</p>
-    </div>
-  </div>
-    </div>
-
-    <div class="stops">
-      <div class="stop stop-head" aria-hidden="true"><span>Where</span><span>How it breaks</span><span>What I do about it</span></div>
-      <div class="stop">
-        <h3><span class="n">1</span> In the clinic</h3>
-        <p class="how">A page gets skipped. Last month's figures get copied into this month.</p>
-        <p>I supervise collection in 130+ facilities and have checked registers in more than 30 of them myself. My repeat check on stock records flagged 44 of 242 facilities.</p>
-      </div>
-      <div class="stop">
-        <h3><span class="n">2</span> On the phone</h3>
-        <p class="how">A thumb slips on the form and 48 becomes 84.</p>
-        <p>I design the ODK forms to refuse it, with range checks and rules that compare one answer with another. One of my forms has 60 variables.</p>
-      </div>
-      <div class="stop">
-        <h3><span class="n">3</span> On the way in</h3>
-        <p class="how">Register photos pile up on the server. Some get copied twice and some never arrive.</p>
-        <p>My pipeline moves only the new files, several at a time, and retries the ones that fail. A run of about 1,500 files used to take 45 minutes. It now takes a few.</p>
-      </div>
-      <div class="stop">
-        <h3><span class="n">4</span> In the database</h3>
-        <p class="how">A file loads twice. Half a file loads and nobody notices.</p>
-        <p>Every load I write is logged, checked for duplicates first, and counted row by row after. Stock reports from 255 facilities go through this each month.</p>
-      </div>
-      <div class="stop">
-        <h3><span class="n">5</span> In the report</h3>
-        <p class="how">The register and DHIS2 disagree, and the report quotes the wrong one.</p>
-        <p>I match the two facility by facility, go back to the register photo where they differ, and write up what I find for leadership.</p>
-      </div>
-    </div>
-    <p class="after">Once the data is sound, I model it. <a href="#projects">See the projects.</a></p>
   </div>
 </section>
 
 <section class="band" id="projects">
   <div class="wrap">
     <h2>Projects</h2>
-    <p class="intro">I drew each chart from the project's own results. All the code is public.</p>
+    <p class="intro">Charts come from each project's own results. All code is public.</p>
 
     <div id="proj-list">
 
@@ -779,10 +770,75 @@
   </div>
 </section>
 
+<section class="band breaks" id="breaks" style="background:var(--paper)">
+  <div class="wrap">
+    <h2>Data quality checks</h2>
+    <div class="lede">
+      <p>
+        Errors enter health data at several points between a clinic register and a state database. A figure of 48 in a register can arrive in the database as 84. I check the data at each of the five points below.
+      </p>
+      <div class="versus" id="versus">
+    <div class="v-paper">
+      <p class="v-cap">What the nurse wrote in the register</p>
+      <div class="reg" aria-hidden="true">
+        <p class="reg-title">Penta 3 given, October</p>
+        <p><span>Week 1</span><span>11</span></p>
+        <p><span>Week 2</span><span>14</span></p>
+        <p><span>Week 3</span><span>9</span></p>
+        <p><span>Week 4</span><span>14</span></p>
+      </div>
+      <p class="v-num v-ink"><span class="ring">48</span></p>
+    </div>
+    <button type="button" class="v-sign" id="v-sign" aria-label="Check the figure again">&ne;</button>
+    <div class="v-screen">
+      <p class="v-cap" id="v-cap">What the state database says</p>
+      <div class="dbrow" aria-hidden="true">
+        <p><span>Facility</span><span>Example PHC</span></p>
+        <p><span>Indicator</span><span>Penta 3 doses given</span></p>
+        <p><span>Period</span><span>October</span></p>
+        <p><span>Source</span><span>DHIS2</span></p>
+      </div>
+      <p class="v-num v-typed" id="v-typed" aria-live="polite">84</p>
+    </div>
+  </div>
+    </div>
+
+    <div class="stops">
+      <div class="stop stop-head" aria-hidden="true"><span>Where</span><span>How it breaks</span><span>What I do about it</span></div>
+      <div class="stop">
+        <h3><span class="n">1</span> In the clinic</h3>
+        <p class="how">A page gets skipped. Last month's figures get copied into this month.</p>
+        <p>I supervise collection in 130+ facilities and have checked registers in more than 30 of them myself. My repeat check on stock records flagged 44 of 242 facilities.</p>
+      </div>
+      <div class="stop">
+        <h3><span class="n">2</span> On the phone</h3>
+        <p class="how">A thumb slips on the form and 48 becomes 84.</p>
+        <p>I design the ODK forms to refuse it, with range checks and rules that compare one answer with another. One of my forms has 60 variables.</p>
+      </div>
+      <div class="stop">
+        <h3><span class="n">3</span> On the way in</h3>
+        <p class="how">Register photos pile up on the server. Some get copied twice and some never arrive.</p>
+        <p>My pipeline moves only the new files, several at a time, and retries the ones that fail. A run of about 1,500 files used to take 45 minutes. It now takes a few.</p>
+      </div>
+      <div class="stop">
+        <h3><span class="n">4</span> In the database</h3>
+        <p class="how">A file loads twice. Half a file loads and nobody notices.</p>
+        <p>Every load I write is logged, checked for duplicates first, and counted row by row after. Stock reports from 255 facilities go through this each month.</p>
+      </div>
+      <div class="stop">
+        <h3><span class="n">5</span> In the report</h3>
+        <p class="how">The register and DHIS2 disagree, and the report quotes the wrong one.</p>
+        <p>I match the two facility by facility, go back to the register photo where they differ, and write up what I find for leadership.</p>
+      </div>
+    </div>
+    <p class="after">Once the data is sound, I model it. <a href="#projects">See the projects.</a></p>
+  </div>
+</section>
+
 <section class="try" id="try">
   <div class="wrap try-grid">
     <div>
-      <h2>Try the checks yourself</h2>
+      <h2>Data checks demo</h2>
       <p>
         A short demo. This is a monthly stock report for one vaccine at a made-up clinic. Change the numbers and send it. Four checks of the kind I build into forms and pipelines run on it.
       </p>
@@ -826,10 +882,26 @@
 
 <section class="band" id="skills">
   <div class="wrap">
-    <h2>Skills, and where I used them</h2>
-    <p class="intro">For each skill, the work I did with it.</p>
+    <h2>Skills</h2>
+    <p class="intro">Each skill with the work it was used for.</p>
 
     <div class="skillrows">
+      <div class="skill">
+        <div><h3>Statistics</h3><p class="kit">Python, R, hypothesis tests, forecasting</p></div>
+        <ul>
+          <li><a href="#p-ab">A/B testing framework</a>: power analysis, three tests per measure, confidence intervals and effect sizes.</li>
+          <li>Sales forecasting for my final year project. Linear regression had the lowest error, with a MAPE of 8.45%.</li>
+          <li>Diagnostic and predictive analysis in Python and R at Natview.</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <div><h3>Power BI and Excel</h3><p class="kit">DAX, data modelling, advanced Excel</p></div>
+        <ul>
+          <li>Built the Power BI data model behind a state-wide health dashboard.</li>
+          <li>A reporting suite at Bilsun Textile that cut overstock by 15% and reporting time by about 30%.</li>
+          <li>An Excel tracking sheet that split validation work across a team of 9 to 10 people.</li>
+        </ul>
+      </div>
       <div class="skill">
         <div><h3>SQL</h3><p class="kit">PostgreSQL, MySQL, SQLite, Google Cloud SQL</p></div>
         <ul>
@@ -847,34 +919,10 @@
         </ul>
       </div>
       <div class="skill">
-        <div><h3>Power BI and Excel</h3><p class="kit">DAX, data modelling, advanced Excel</p></div>
-        <ul>
-          <li>Built the Power BI data model behind a state-wide health dashboard.</li>
-          <li>A reporting suite at Bilsun Textile that cut overstock by 15% and reporting time by about 30%.</li>
-          <li>An Excel tracking sheet that split validation work across a team of 9 to 10 people.</li>
-        </ul>
-      </div>
-      <div class="skill">
         <div><h3>Machine learning</h3><p class="kit">scikit-learn, PyTorch, FastAPI, Docker, Streamlit</p></div>
         <ul>
           <li><a href="#p-xray">Chest X-ray classifier</a>: transfer learning, a split by patient, threshold tuning and Grad-CAM. Served with FastAPI in a Docker container.</li>
           <li><a href="#p-diabetes">Diabetes</a> and <a href="#p-heart">heart disease</a> predictors: model comparison, new features and a threshold set for screening.</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <div><h3>Language models</h3><p class="kit">Groq and Gemini APIs, ChromaDB, prompt design</p></div>
-        <ul>
-          <li><a href="#p-validator">Clinical NLP validator</a>: tests model output field by field against the correct answers.</li>
-          <li><a href="#p-nftify">Nftify</a>: searches documents first, then answers with sources.</li>
-          <li>Facility Helper: a model call with a keyword fallback when the call fails.</li>
-        </ul>
-      </div>
-      <div class="skill">
-        <div><h3>Statistics</h3><p class="kit">Python, R, hypothesis tests, forecasting</p></div>
-        <ul>
-          <li><a href="#p-ab">A/B testing framework</a>: power analysis, three tests per measure, confidence intervals and effect sizes.</li>
-          <li>Sales forecasting for my final year project. Linear regression had the lowest error, with a MAPE of 8.45%.</li>
-          <li>Diagnostic and predictive analysis in Python and R at Natview.</li>
         </ul>
       </div>
       <div class="skill">
@@ -884,6 +932,14 @@
           <li>Supervise collection across 130+ facilities and work with facility staff and community health workers.</li>
           <li>Ran key informant interviews and focus group discussions with the Kaduna State Bureau of Statistics and the Ministry of Health.</li>
           <li>Build charts and facility comments for NHMIS reports from DHIS2 data.</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <div><h3>Language models</h3><p class="kit">Groq and Gemini APIs, ChromaDB, prompt design</p></div>
+        <ul>
+          <li><a href="#p-validator">Clinical NLP validator</a>: tests model output field by field against the correct answers.</li>
+          <li><a href="#p-nftify">Nftify</a>: searches documents first, then answers with sources.</li>
+          <li>Facility Helper: a model call with a keyword fallback when the call fails.</li>
         </ul>
       </div>
       <div class="skill">
@@ -915,7 +971,7 @@
       <div>
         <p>
           I also manage the cloud database behind Natview's web tools, and I write the monthly supply chain
-          reports that go to the team and the ministry.
+          reports that go to Kaduna State Government and relevant stakeholders.
         </p>
         <p>
           The Click-On Kaduna fellowship had over 6,000 applicants in my year. I finished in the top 3 of
@@ -991,7 +1047,7 @@
           <li>Built the register photo pipeline, which cut a run of about 1,500 files from roughly 45 minutes to a few minutes.</li>
           <li>Run data checks on stock records across 255 health facilities.</li>
           <li>Manage the cloud SQL database that feeds the supply chain and Longitudinal Study web tools.</li>
-          <li>Write the monthly execution report and supply chain performance reports for the team and the ministry.</li>
+          <li>Write the monthly execution report and supply chain performance reports for Kaduna State Government and relevant stakeholders.</li>
           <li>Build the charts and facility comments for the NHMIS reports from DHIS2 data.</li>
           <li>Building the analysis dataset for the Kaduna maternal and newborn health research project.</li>
         </ul>
